@@ -1,3 +1,4 @@
+const process = require('process');
 const express = require('express');
 const { run, runAsync, runUnhandled, runUnhandledAsync } = require('./test');
 
@@ -54,8 +55,8 @@ app.listen(3000, () => {
   console.log('listening on port 3000');
 });
 
-process.on('unhandledException', () => {
-  console.log('unhandledException');
+process.on('uncaughtException', () => {
+  console.log('uncaughtException');
 });
 
 process.on('unhandledRejection', () => {
