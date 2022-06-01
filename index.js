@@ -37,7 +37,7 @@ routes.get('/unhandled/:isThrow', (req, res) => {
   }
 });
 
-routes.get('/unhandled-async/:isThrow', (req, res) => {
+routes.get('/unhandled-async/:isThrow', async (req, res) => {
   const isThrow = parseInt(req.params.isThrow);
   try {
     runUnhandledAsync(isThrow);
